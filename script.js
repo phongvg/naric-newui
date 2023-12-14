@@ -13,3 +13,13 @@ function toggleAccordion() {
 }
 
 items.forEach((item) => item.addEventListener("click", toggleAccordion));
+
+$(".toggle-option").on("click", function () {
+  $(this).siblings(".optionBox").slideToggle(500);
+});
+
+$(".optionBox li").on("click", function () {
+  var val = $(this).text();
+  $(this).closest(".optionBox").siblings(".toggle-option").text(val);
+  $(this).closest(".optionBox").hide();
+});
